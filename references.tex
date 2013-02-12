@@ -1,0 +1,35 @@
+\documentclass{article}
+
+\newcommand{\name}{Brian Buccola}
+\newcommand{\mytitle}{BibTeX references}
+
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib}
+\usepackage{hyperref}
+\hypersetup{%
+    colorlinks = true,
+    allcolors = blue,
+    pdfcreator = {\name},
+    pdfauthor = {\name},
+    pdftitle = {\mytitle},
+    pdfpagemode = UseNone
+}
+
+\setlength{\parindent}{0cm}
+
+\begin{document}
+
+This is a list of all the bibliographic entries contained in
+\texttt{references.bib}.
+
+\hfill --- \textit{\name}
+
+% Be sure to first delete references.bbl. Otherwise references no longer in
+% references.bib will still be generated.
+
+\nocite{*}
+\bibliography{references}
+\bibliographystyle{linquiry2}
+
+\end{document}
