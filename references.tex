@@ -4,8 +4,12 @@
 \newcommand{\mytitle}{BibTeX references}
 
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage[osf,sc]{mathpazo}
+\usepackage[backend=biber,bibencoding=utf8,style=numeric,defernumbers=true]{biblatex}
 \usepackage[margin=1in]{geometry}
-\usepackage{natbib}
+\addbibresource{references.bib}
 \usepackage{hyperref}
 \hypersetup{%
     colorlinks = true,
@@ -23,13 +27,16 @@
 This is a list of all the bibliographic entries contained in
 \texttt{references.bib}.
 
-\hfill --- \textit{\myname}
+\hfill --- \myname, \today
 
 % Be sure to first delete references.bbl. Otherwise references no longer in
 % references.bib will still be generated.
 
 \nocite{*}
-\bibliography{references}
-\bibliographystyle{linquiry2}
-
+\printbibliography[type=book,title={Books}]
+\printbibliography[type=article,title={Articles}]
+\printbibliography[type=incollection,title={Book Chapters}]
+\printbibliography[type=inproceedings,title={Proceedings Papers}]
+\printbibliography[type=thesis,title={Dissertations}]
+\printbibliography[type=proceedings,title={McGWPL Volumes}]
 \end{document}
