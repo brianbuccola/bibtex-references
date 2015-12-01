@@ -17,17 +17,18 @@
     pdfcreator = {\myname},
     pdfauthor = {\myname},
     pdftitle = {\mytitle},
+    pdfsubject = {\myname's BibTeX references},
+    pdfkeywords = {bibtex,latex,references},
     pdfpagemode = UseNone
 }
 
-\setlength{\parindent}{0cm}
+\setlength{\parindent}{0pt}
 
 \begin{document}
 
 This is a list of all the bibliographic entries contained in
-\texttt{references.bib}.
-
-\hfill --- \myname, \today
+\texttt{references.bib}.\\[\baselineskip]
+--- \myname, \today
 
 % Be sure to first delete references.bbl. Otherwise references no longer in
 % references.bib will still be generated.
@@ -39,4 +40,12 @@ This is a list of all the bibliographic entries contained in
 \printbibliography[type=inproceedings,title={Proceedings Papers}]
 \printbibliography[type=thesis,title={Dissertations}]
 \printbibliography[type=proceedings,title={McGWPL Volumes}]
+\printbibliography[%
+  nottype={book},
+  nottype={article},
+  nottype={incollection},
+  nottype={inproceedings},
+  nottype={thesis},
+  nottype={proceedings},
+  title={Other}]
 \end{document}
