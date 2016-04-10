@@ -1,39 +1,60 @@
 \documentclass{article}
 
+%=========================%
+%  Packages and settings  %
+%=========================%
+
+% Name and title
 \newcommand{\myname}{Brian Buccola}
 \newcommand{\mytitle}{BibTeX references}
 
+% Font settings
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{microtype}
 \usepackage[osf,sc]{mathpazo}
+
+% References
 \usepackage[backend=biber,bibencoding=utf8,style=numeric,defernumbers=true]{biblatex}
 \usepackage[margin=1in]{geometry}
 \addbibresource{references.bib}
+
+% Colors
+\usepackage[x11names]{xcolor}
+
+% Hyperlinks and PDF metadata
 \usepackage{hyperref}
 \hypersetup{%
     colorlinks = true,
-    allcolors = blue,
-    pdfcreator = {\myname},
+    allcolors = Blue4,
     pdfauthor = {\myname},
     pdftitle = {\mytitle},
     pdfsubject = {\myname's BibTeX references},
-    pdfkeywords = {bibtex,latex,references},
-    pdfpagemode = UseNone
+    pdfkeywords = {bibtex,biblatex,latex,references},
+    pdfpagemode = UseNone,
 }
 
-\setlength{\parindent}{0pt}
+% Title, author, date
+\title{\mytitle}
+\author{\myname}
+\date{\today}
+
+%========%
+%  Main  %
+%========%
 
 \begin{document}
 
-This is a list of all the bibliographic entries contained in
-\texttt{references.bib}.\\[\baselineskip]
---- \myname, \today
+\maketitle
 
-% Be sure to first delete references.bbl. Otherwise references no longer in
-% references.bib will still be generated.
+\begin{abstract}
+  This is a list of all bibliographic entries contained in
+  \texttt{references.bib}, organized by publication type.
+\end{abstract}
 
 \nocite{*}
+\newcommand{\VAN}[3]{#3}
+\newcommand{\VON}[2]{#2}
 \printbibliography[type=book,title={Books}]
 \printbibliography[type=article,title={Articles}]
 \printbibliography[type=incollection,title={Book Chapters}]
@@ -48,4 +69,5 @@ This is a list of all the bibliographic entries contained in
   nottype={thesis},
   nottype={proceedings},
   title={Other}]
+
 \end{document}
