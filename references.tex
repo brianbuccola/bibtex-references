@@ -6,7 +6,7 @@
 
 % Name and title
 \newcommand{\myname}{Brian Buccola}
-\newcommand{\mytitle}{BibTeX references}
+\newcommand{\mytitle}{Biblatex references}
 
 % Font settings
 \usepackage[T1]{fontenc}
@@ -15,9 +15,20 @@
 \usepackage[osf,sc]{mathpazo}
 
 % References
-\usepackage[backend=biber,bibencoding=utf8,style=numeric,defernumbers=true]{biblatex}
-\usepackage[margin=1in]{geometry}
+\usepackage[backend=biber,
+            defernumbers=true,
+            sorting=nyt,
+            style=numeric]{biblatex}
 \addbibresource{references.bib}
+\DeclareFieldFormat[%
+  article,
+  incollection,
+  inproceedings,
+  thesis,
+  unpublished,]{title}{#1}% don't put double quotes around titles
+
+% Margins
+\usepackage[margin=1in]{geometry}
 
 % Colors
 \usepackage[x11names]{xcolor}
@@ -53,14 +64,12 @@
 \end{abstract}
 
 \nocite{*}
-\newcommand{\VAN}[3]{#3}
-\newcommand{\VON}[2]{#2}
 \printbibliography[type=book,title={Books}]
 \printbibliography[type=article,title={Articles}]
 \printbibliography[type=incollection,title={Book Chapters}]
 \printbibliography[type=inproceedings,title={Proceedings Papers}]
 \printbibliography[type=thesis,title={Dissertations}]
-\printbibliography[type=proceedings,title={McGWPL Volumes}]
+\printbibliography[type=proceedings,title={Edited Volumes}]
 \printbibliography[%
   nottype={book},
   nottype={article},
