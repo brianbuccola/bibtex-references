@@ -28,6 +28,17 @@
   thesis,
   unpublished,]{title}{#1}% don't put double quotes around titles
 
+%% Highlight my name
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}
+    {\textbf{#1}}
+    {#1}}
+
 % Margins
 \usepackage[margin=1in]{geometry}
 
